@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="../../favicon.ico">
+
+<title>电影网站</title>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link href="css/dashboard.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">电影</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">登陆</a></li>
+					<li><a href="#">设置</a></li>
+					<li><a href="#">简介</a></li>
+					<li><a href="#">帮助</a></li>
+				</ul>
+				<form class="navbar-form navbar-right">
+					<input type="text" class="form-control" placeholder="Search...">
+				</form>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li class="active"><a href="index.html">全部 <span
+							class="sr-only">(current)</span></a></li>
+					<li><a href="movie_list.html?category=喜剧"
+						class="list-group-item active">喜剧</a></li>
+					<li><a href="movie_list.html?category=爱情"
+						class='list-group-item'>爱情</a></li>
+					<li><a href="movie_list.html?category=动作"
+						class='list-group-item'>动作</a></li>
+					<li><a href="movie_list.html?category=剧情"
+						class='list-group-item'>剧情</a></li>
+					<li><a href="movie_list.html?category=犯罪"
+						class='list-group-item'>犯罪</a></li>
+					<li><a href="movie_list.html?category=科幻"
+						class='list-group-item'>科幻</a></li>
+					<li><a href="movie_list.html?category=战争"
+						class='list-group-item'>战争</a></li>
+					<li><a href="movie_list.html?category=青春"
+						class='list-group-item'>青春</a></li>
+					<li><a href="movie_list.html?category=古装"
+						class='list-group-item'>古装</a></li>
+					<li><a href="movie_list.html?category=悬疑"
+						class='list-group-item'>悬疑</a></li>
+					<li><a href="movie_list.html?category=伦理"
+						class='list-group-item'>伦理</a></li>
+					<li><a href="movie_list.html?category=恐怖"
+						class='list-group-item'>恐怖</a></li>
+					<ul class="nav nav-sidebar">
+						<li><a href="">!</a></li>
+						<li><a href="">!</a></li>
+						<li><a href="">!</a></li>
+					</ul>
+			</div>
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				<h1 class="page-header">影片详情</h1>
+
+				<div class="row placeholders">
+					<div id="name_img" class="col-xs-6 col-sm-3 placeholder">
+						<!-- <img src="http://s1.hao123img.com/resource/newvideo/img/common/loading.cfe205e.png" width="300" height="300" alt="Generic placeholder thumbnail">
+              <h4>哪吒之魔童降世</h4> -->
+
+					</div>
+					<div id="other" class="col-xs-6 col-sm-3 placeholder">
+						<!-- <h3>导演</h3>
+		            	<h3>地区</h3>
+		            	<h3>年份</h3>
+		            	<h3>分类</h3>
+		            	<h3>演员</h3> -->
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="js/jquery-3.4.1.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-3.4.1.js"><\/script>')</script>
+	<script src="js/bootstrap.js"></script>
+	<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+	<script src="js/holder.min.js"></script>
+	<script src="js/getParameter.js"></script>
+</body>
+
+<script type="text/javascript">
+  	$(function(){
+  		var id = getParameter("id");
+  		$.get("QueryMovieById",{id:id},function(result){
+  			//console.log(result);
+  			
+  			var name = result.name;
+  			var director = result.director;
+  			var area = result.area;
+  			var decade = result.decade;
+  			var category = result.category;
+  			var actor = result.actor;
+  			
+  			var name_imgHtml = '<img src="'+result.imgsrc+'" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail"><h4>'+name+'</h4>';
+            var otherHtml = '<h3>导演: '+director+'</h3><h3>地区: '+area+'</h3><h3>年份: '+decade+'</h3><h3>分类: '+category+'</h3><h3>演员: '+actor+'</h3>';
+            //console.log(name_imgHtml);
+            //console.log(otherHtml)
+  			
+            $("#name_img").html(name_imgHtml);
+            $("#other").html(otherHtml);
+            
+  		},"json")
+  		
+  		
+  		
+  	})	
+  
+  
+  
+  </script>
+
+</html>

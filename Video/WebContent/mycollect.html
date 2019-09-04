@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>电影网站</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+    
+   	<style type="text/css">
+   		.img-responsive{
+   			display: inline-block;
+   			width: 200px;
+   			height: 300px;
+   		}
+   	</style>
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">电影</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a id="lo" href="login.html">登陆</a></li>
+            <li><a href="set.html">设置</a></li>
+            <li><a href="intro.html">简介</a></li>
+            <li><a href="help.html">帮助</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="index.html">全部 <span class="sr-only">(current)</span></a></li>
+            <li><a href="movie_list.html?category=喜剧" class="list-group-item active">喜剧</a></li>
+            <li><a href="movie_list.html?category=爱情" class='list-group-item'>爱情</a></li>
+            <li><a href="movie_list.html?category=动作" class='list-group-item'>动作</a></li>
+            <li><a href="movie_list.html?category=剧情" class='list-group-item'>剧情</a></li>
+            <li><a href="movie_list.html?category=犯罪" class='list-group-item'>犯罪</a></li>
+            <li><a href="movie_list.html?category=科幻" class='list-group-item'>科幻</a></li>
+            <li><a href="movie_list.html?category=战争" class='list-group-item'>战争</a></li>
+            <li><a href="movie_list.html?category=青春" class='list-group-item'>青春</a></li>
+            <li><a href="movie_list.html?category=古装" class='list-group-item'>古装</a></li>
+            <li><a href="movie_list.html?category=悬疑" class='list-group-item'>悬疑</a></li>
+            <li><a href="movie_list.html?category=伦理" class='list-group-item'>伦理</a></li>
+            <li><a href="movie_list.html?category=恐怖" class='list-group-item'>恐怖</a></li>
+          <ul id="mycounter" class="nav nav-sidebar">
+            <!-- 
+            <li><a href="">我的账户</a></li>
+            <li><a href="">我的收藏</a></li>
+            <li><a href="">退出</a></li>
+             -->
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">我的收藏</h1>
+
+          <div id="movie" class="row placeholders">
+           	<!-- 
+           		 <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="http://sc3.hao123img.com/newvideo/749482e064329a19fd03dc38713b39c9" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <a href="movie_detail.html?id=1"><h4>环太平洋：雷霆再起</h4></a>
+              <span class="text-muted">主演：约翰·博耶加  斯科特·伊斯特伍德  景甜</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="http://sc2.hao123img.com/newvideo/186fc618f9b751a02d93dcf1a35a336c" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <a href="movie_detail.html?id=2"><h4>复仇者联盟</h4></a>
+              <span class="text-muted">主演：Chris Evans  小罗伯特·唐尼  克里斯·海姆斯沃斯</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="http://sc1.hao123img.com/newvideo/38a21b325511dac20382b59a32c22f98" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <a href="movie_detail.html?id=4"><h4>银魂</h4></a>
+              <span class="text-muted">主演：小栗旬   菅田将晖  桥本环奈  柳乐优弥  新井浩文</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="https://img.yongjiu7.com/upload/vod/2019-07-26/201907261564141134.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>哪吒之魔童降世 </h4>
+              <span class="text-muted">主演：吕艳婷 囧森瑟夫 瀚墨 陈浩 绿绮 张珈铭 杨卫</span>
+            </div>
+           	 -->
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-3.4.1.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-3.4.1.js"><\/script>')</script>
+    <script src="js/bootstrap.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="js/holder.min.js"></script>
+    <script src="js/getParameter.js"></script>
+  </body>
+  
+    <script type="text/javascript">
+  	$(function(){
+  		
+  		var username = getParameter("username");
+  		$.get("QueryUserByUsername",{username:username},function(result){
+  			var username = result.username;
+  			//console.log(id);
+  			var userHtml = '<li><a href="mycounter.html?username='+username+'">我的账户</a></li><li><a href="mycollect.html?username='+username+'">我的收藏</a></li><li><a href="index.html">退出</a></li>';
+  			$("#mycounter").html(userHtml);
+  			$("#lo").attr("href","#");
+  			$("#lo").text(username);
+  		},"json")
+  		
+  		$.get("Collect",{username:username},function(result){
+  			
+  			var html = '';
+  			$(result).each(function(index,element){
+  				html += ' <div class="col-xs-6 col-sm-3 placeholder"><img src="'+element.imgsrc+'" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail"><a href="movie_detail.html?id='+element.id+'"><h4>'+element.name+'</h4></a><span class="text-muted">主演：'+element.actor+'</span></div>';
+  			})
+  			
+  			$("#movie").html(html);
+  		},"json")
+  		
+  	})	
+  
+  </script>
+  
+</html>
